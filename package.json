@@ -1,0 +1,28 @@
+{
+  "name": "cloudsphere",
+  "version": "1.0.0",
+  "description": "CloudSphere - Premium Cloud Resource Management Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "npm run build --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run server:dev\" \"npm run client\"",
+    "server": "node server/server.js",
+    "server:dev": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "seed": "node server/utils/seedData.js"
+  },
+  "keywords": [
+    "cloud",
+    "resource-management",
+    "saas",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "CloudSphere Team",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

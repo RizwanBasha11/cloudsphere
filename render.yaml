@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cloudsphere-platform
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && cd client && npm install --legacy-peer-deps && npm run build && cd .. && cd server && npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        value: cloudsphere_production_secret_key_2026_jwt_token
