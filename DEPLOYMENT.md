@@ -11,17 +11,16 @@ Render provides free hosting for full-stack Node.js web applications and automat
 ### Step-by-Step:
 1. **Push your code to GitHub**:
    ```bash
-   git init
    git add .
-   git commit -m "Initial commit of CloudSphere Enterprise Platform"
-   # Create a repository on github.com and link it:
+   git commit -m "Deploy CloudSphere Enterprise Platform"
+   # Create a new repository on github.com (e.g., https://github.com/YOUR_USERNAME/cloudsphere.git)
    git remote add origin https://github.com/YOUR_USERNAME/cloudsphere.git
    git branch -M main
    git push -u origin main
    ```
 
 2. **Connect to Render**:
-   - Go to [https://render.com](https://render.com) and log in.
+   - Go to [https://render.com](https://render.com) and log in (with GitHub).
    - Click **"New +"** -> **"Web Service"**.
    - Select your `cloudsphere` GitHub repository.
 
@@ -33,7 +32,7 @@ Render provides free hosting for full-stack Node.js web applications and automat
    - **Runtime**: `Node`
    - **Build Command**:
      ```bash
-     npm install && cd client && npm install --legacy-peer-deps && npm run build && cd .. && cd server && npm install
+     npm install && npm run build
      ```
    - **Start Command**:
      ```bash
@@ -48,7 +47,7 @@ Render provides free hosting for full-stack Node.js web applications and automat
 
 5. **Deploy**:
    - Click **"Create Web Service"**.
-   - Render will build the React client and launch the Express backend.
+   - Render will automatically install dependencies, build the React client, and launch the server.
    - Your live website URL will appear at the top (e.g., `https://cloudsphere-platform.onrender.com`).
 
 ---
@@ -65,7 +64,7 @@ Render provides free hosting for full-stack Node.js web applications and automat
 
 ## 🐳 Method 3: Deploy with Docker Container
 
-CloudSphere includes a multi-stage `Dockerfile`:
+CloudSphere includes an optimized multi-stage `Dockerfile`:
 
 ```bash
 # Build the Docker image
@@ -97,3 +96,4 @@ Open **[http://localhost:5000](http://localhost:5000)** in your browser.
 - **Email**: `dileep@cloudsphere.io`
 - **Password**: `dileep65`
 - **Role**: Infrastructure Administrator (Meesala Dileep Kumar)
+- **Tenant 2 (Testing Multi-Tenancy)**: `alex@techcorp.com` / `TechCorp@2026`
